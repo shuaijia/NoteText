@@ -10,7 +10,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView tv_normal;
     private TextView tv_rich;
-    private TextView tv_scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tv_normal = (TextView) findViewById(R.id.tv_normal);
         tv_rich = (TextView) findViewById(R.id.tv_rich);
-        tv_scroll = (TextView) findViewById(R.id.tv_scroll);
 
         tv_normal.setOnClickListener(this);
         tv_rich.setOnClickListener(this);
-        tv_scroll.setOnClickListener(this);
     }
 
     @Override
@@ -37,11 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_rich:
 
                 startActivity(new Intent(MainActivity.this, RichActivity.class));
-
-                break;
-            case R.id.tv_scroll:
-
-                startActivity(new Intent(MainActivity.this, ScrollActivity.class));
 
                 break;
         }

@@ -59,8 +59,8 @@ public class JsNoteTextView extends TextView {
     private Paint mPointPaint;
 
     // 开始各结束位置索引,startIndex必须大于等于endIndex
-    private int startIndex = 300;
-    private int endIndex = 520;
+    private int startIndex = 0;
+    private int endIndex = 0;
 
     private int off; //字符串的偏移值
 
@@ -248,7 +248,7 @@ public class JsNoteTextView extends TextView {
                             .showAtLocation(this, Gravity.TOP | Gravity.LEFT, (int) notePointX, (int) notePointY - scrollY);
 
                     TextView tv_pop = (TextView) popWindow.getItemView(R.id.tv_pop);
-                    tv_pop.setText("我爱北京天安门，天安门上太阳升,我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升");
+                    tv_pop.setText("我爱北京天安门，天安门上太阳升");
                 }
 
                 break;
@@ -260,10 +260,23 @@ public class JsNoteTextView extends TextView {
         return true;
     }
 
-
+    /***
+     * 设置scrollView的纵向偏移量
+     * @param scrollY
+     */
     public void setMScrollY(int scrollY) {
         this.scrollY = scrollY;
         Log.e(TAG, "setMScrollY: " + this.scrollY);
+    }
+
+    /**
+     * 设置划线的开始和结束位置
+     * @param startIndex
+     * @param endIndex
+     */
+    public void setNoteIndex(int startIndex, int endIndex) {
+        this.startIndex = startIndex;
+        this.endIndex = endIndex;
     }
 
     class TextIndex {

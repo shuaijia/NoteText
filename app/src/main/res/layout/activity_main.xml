@@ -27,16 +27,6 @@
         android:layout_margin="10dp"
         android:background="#ac5"
         android:gravity="center"
-        android:text="富文本"
-        android:textColor="#fff" />
-
-    <TextView
-        android:id="@+id/tv_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:background="#858cba"
-        android:gravity="center"
-        android:text="ScrollView包裹的普通文本"
+        android:text="ScrollView包裹的富文本"
         android:textColor="#fff" />
 </LinearLayout>
