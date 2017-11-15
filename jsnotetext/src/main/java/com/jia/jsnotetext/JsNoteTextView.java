@@ -206,7 +206,8 @@ public class JsNoteTextView extends TextView {
                 notePointX = x_stop + mStrokeWidth * 4;
                 notePointY = baseline + mStrokeWidth + 8;
                 Log.e(TAG, "onDraw: x=" + (x_stop + mStrokeWidth * 4) + "y=" + (baseline + mStrokeWidth + 8));
-                float[] pts = {x_stop + mStrokeWidth * 2, baseline + mStrokeWidth + 8, x_stop + mStrokeWidth * 4, baseline + mStrokeWidth + 8, x_stop + mStrokeWidth * 6, baseline + mStrokeWidth + 8};
+                float[] pts = {x_stop + mStrokeWidth * 2, baseline + mStrokeWidth + 8, x_stop + mStrokeWidth * 4,
+                        baseline + mStrokeWidth + 8, x_stop + mStrokeWidth * 6, baseline + mStrokeWidth + 8};
                 canvas.drawPoints(pts, mPointPaint);
             }
 
