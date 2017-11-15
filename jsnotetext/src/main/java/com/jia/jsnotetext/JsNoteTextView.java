@@ -62,11 +62,10 @@ public class JsNoteTextView extends TextView {
     private int startIndex = 0;
     private int endIndex = 0;
 
-    private int off; //字符串的偏移值
-
-    float x_start, x_stop, x_diff;
-    int baseline;
-
+    // 下划线的位置（每次更新）
+    private float x_start, x_stop, x_diff;
+    private int baseline;
+    // 小圆圈的位置
     private float notePointX, notePointY;
 
     private int scrollY = 0;
@@ -158,41 +157,29 @@ public class JsNoteTextView extends TextView {
         for (int i = 0; i < indexs.size(); i++) {
             // 先确定开始位置
             if (startIndex >= indexs.get(i).start && startIndex <= indexs.get(i).end) {
-
                 // 在确定结束位置
                 if (endIndex >= indexs.get(i).start && endIndex <= indexs.get(i).end) {
-
                     drawIndexs.add(new TextIndex(i, startIndex, endIndex));
                     break;
-
                 } else {
-
                     // 结束位置不再此行的话,先记下起始位置,结束位置为本行最后一位
                     drawIndexs.add(new TextIndex(i, startIndex, indexs.get(i).end));
                     hasStart = true;
                     continue;
                 }
-
-
             } else {
-
                 if (endIndex >= indexs.get(i).start && endIndex <= indexs.get(i).end) {
 
                     drawIndexs.add(new TextIndex(i, indexs.get(i).start, endIndex));
                     hasStart = false;
                     break;
-
                     // 否则此行全画
                 } else {
                     if (hasStart) {
                         drawIndexs.add(new TextIndex(i, indexs.get(i).start, indexs.get(i).end));
                     }
-
-
                 }
-
             }
-
         }
 
 
@@ -229,8 +216,6 @@ public class JsNoteTextView extends TextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-        Layout layout = getLayout();
-        int line = 0;
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 Log.e(TAG, "onTouchEvent: " + event.getX() + "   " + event.getY());
