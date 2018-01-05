@@ -17,9 +17,12 @@ import android.text.method.MovementMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.xujiaji.happybubble.BubbleDialog;
 
 import org.xml.sax.XMLReader;
 
@@ -235,6 +238,15 @@ public class JsNoteTextView extends TextView {
 
                     TextView tv_pop = (TextView) popWindow.getItemView(R.id.tv_pop);
                     tv_pop.setText("我爱北京天安门，天安门上太阳升");
+
+//                    new BubbleDialog(getContext())
+//                            .addContentView(tv_pop)
+//                            .setPosition(BubbleDialog.Position.TOP)
+//                            .setOffsetY(215)
+//                            .setOffsetX(-20)
+//                            .setClickedView(this)
+//                            .calBar(true)
+//                            .show();
                 }
 
                 break;
@@ -248,6 +260,7 @@ public class JsNoteTextView extends TextView {
 
     /***
      * 设置scrollView的纵向偏移量
+     *
      * @param scrollY
      */
     public void setMScrollY(int scrollY) {
@@ -257,6 +270,7 @@ public class JsNoteTextView extends TextView {
 
     /**
      * 设置划线的开始和结束位置
+     *
      * @param startIndex
      * @param endIndex
      */

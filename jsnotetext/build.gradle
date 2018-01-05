@@ -22,5 +22,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.github.xujiaji:happy-bubble:1.0.3'
 }
 
